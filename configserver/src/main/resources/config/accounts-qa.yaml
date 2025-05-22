@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to QA"
+  contactDetails:
+    name: "Sharooque QA POC"
+    email: "sharooquethoufiq@gmail.com"
+  onCallSupport:
+    - +911123456
+    - +918765443

@@ -1,4 +1,4 @@
-package constants;
+package com.ainzson.cards.constants;
 
 public final class CardsConstants {
 

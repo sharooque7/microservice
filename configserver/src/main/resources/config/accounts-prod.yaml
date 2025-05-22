@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to Prod"
+  contactDetails:
+    name: "Sharooque Prod POC"
+    email: "sharooquethoufiq@gmail.com"
+  onCallSupport:
+    - +911123456
+    - +918765443

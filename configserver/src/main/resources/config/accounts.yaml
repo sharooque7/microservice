@@ -1,0 +1,11 @@
+build:
+  version: "3.0"
+
+accounts:
+  message: "Welcome to Accouts Default"
+  contactDetails:
+    name: "Sharooque"
+    email: "sharooquethoufiq@gmail.com"
+  onCallSupport:
+    - +911123456
+    - +918765443

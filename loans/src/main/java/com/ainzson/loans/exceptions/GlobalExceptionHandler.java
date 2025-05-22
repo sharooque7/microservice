@@ -1,6 +1,5 @@
 package com.ainzson.loans.exceptions;
 
-
 import com.ainzson.loans.dto.ErrorResponseDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
