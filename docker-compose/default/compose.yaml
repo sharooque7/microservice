@@ -1,36 +1,36 @@
 services:
   accountsdb:
-    container_name: accountsdb
+    container_name: "accountsdb"
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: accountsdb
+      MYSQL_DATABASE: "accountsdb"
     extends:
       file: common-config.yml
       service: microservice-db-config
 
   loansdb:
-    container_name: loansdb
+    container_name: "loansdb"
     ports:
       - 3307:3306
     environment:
-      MYSQL_DATABASE: loansdb
+      MYSQL_DATABASE: "loansdb"
     extends:
       file: common-config.yml
       service: microservice-db-config
 
   cardsdb:
-    container_name: cardsdb
+    container_name: "cardsdb"
     ports:
       - 3308:3306
     environment:
-      MYSQL_DATABASE: cardsdb
+      MYSQL_DATABASE: "cardsdb"
     extends:
       file: common-config.yml
       service: microservice-db-config
 
   configserver:
-    image: "sharooque11/configserver:s7"
+    image: "sharooque11/configserver"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -45,7 +45,7 @@ services:
       service: microservice-base-config
 
   accounts:
-    image: "sharooque11/accounts:s7"
+    image: "sharooque11/accounts"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -62,7 +62,7 @@ services:
       service: microservice-configserver-config
 
   loans:
-    image: "sharooque11/loans:s7"
+    image: "sharooque11/loans"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -79,7 +79,7 @@ services:
       service: microservice-configserver-config
 
   cards:
-    image: "sharooque11/cards:s7"
+    image: "sharooque11/cards"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -96,5 +96,5 @@ services:
       service: microservice-configserver-config
 
 networks:
-  eazybank:
+  ainzson:
     driver: "bridge"
