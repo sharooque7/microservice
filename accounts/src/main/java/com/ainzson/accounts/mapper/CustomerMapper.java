@@ -1,15 +1,23 @@
 package com.ainzson.accounts.mapper;
 
+import com.ainzson.accounts.dto.CustomerDetailsDto;
 import com.ainzson.accounts.dto.CustomerDto;
 import com.ainzson.accounts.entities.Customer;
 
 public class CustomerMapper {
 
-    public static CustomerDto mapToCustomerDto(com.ainzson.accounts.entities.Customer customer, CustomerDto customerDto) {
+    public static CustomerDto mapToCustomerDto(Customer customer, CustomerDto customerDto) {
         customerDto.setName(customer.getName());
         customerDto.setEmail(customer.getEmail());
         customerDto.setMobileNumber(customer.getMobileNumber());
         return customerDto;
+    }
+
+    public static CustomerDetailsDto mapToCustomerDetailsDto(Customer customer, CustomerDetailsDto customerDetailsDto) {
+        customerDetailsDto.setName(customer.getName());
+        customerDetailsDto.setEmail(customer.getEmail());
+        customerDetailsDto.setMobileNumber(customer.getMobileNumber());
+        return customerDetailsDto;
     }
 
     public static Customer mapToCustomer(CustomerDto customerDto, Customer customer) {
@@ -18,4 +26,5 @@ public class CustomerMapper {
         customer.setMobileNumber(customerDto.getMobileNumber());
         return customer;
     }
+
 }

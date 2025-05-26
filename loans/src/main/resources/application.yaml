@@ -5,28 +5,64 @@ spring:
     name: "loans"
     profiles:
       active: "prod"
-  datasource:
-      url: jdbc:mysql://localhost:3307/loansdb
-      username: root
-      password: root
-  jpa:
-      show-sql: true
-  sql:
-      init:
-        mode: always
   config:
-      import: "optional:configserver:http://localhost:8071/"
-
+    import: "optional:configserver:http://localhost:8071/"
 #  datasource:
-#    url: jdbc:h2:mem:testdb
-#    driverClassName: org.h2.Driver
-#    username: sa
-#    password: ''
-#  h2:
-#    console:
-#      enabled: true
+#    url: jdbc:mysql://localhost:3307/loansdb
+#    username: root
+#    password: root
 #  jpa:
-#    database-platform: org.hibernate.dialect.H2Dialect
-#    hibernate:
-#      ddl-auto: update
 #    show-sql: true
+#    sql:
+#        init:
+#          mode: always
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+
+info:
+  app:
+    name: "Loands"
+    description: "Loans MS"
+    version: "1.0.0"
+
+
+logging:
+  level:
+    com:
+      ainzson:
+        loans: DEBUG
