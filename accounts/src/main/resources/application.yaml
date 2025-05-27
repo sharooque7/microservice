@@ -63,6 +63,12 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
 
+resilience4j.ratelimiter:
+  configs:
+    default:
+      timeoutDuration: 1000
+      limitRefreshPeriod: 5000
+      limitForPeriod: 1
 
 resilience4j.circuitbreaker:
   configs:
